@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tft-physics"
+version = "0.1.0"
+description = "Temporal Fusion Transformer training with physics-informed constraint losses"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Micheal"}]
+dependencies = [
+  "numpy",
+  "pandas",
+  "torch",
+  "lightning",
+  "pytorch-forecasting",
+  "scikit-learn",
+  "matplotlib",
+  "pyyaml",
+]
+
+[project.scripts]
+tft-physics = "tft_physics.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
