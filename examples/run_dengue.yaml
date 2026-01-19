@@ -1,1 +1,31 @@
+dataset:
+  csv_path: Data/Combined_Cases_Dengue.csv
+  date_col: Date
+  date_format: "%d/%m/%Y"
+  target: mal
+  group_col: group_ids
+  group_ids_list: [1, 2]
+
+train:
+  out_dir: outputs/dengue_run
+  accelerator: gpu  # or "cpu"
+  max_epochs: 200
+  batch_size: 128
+  grad_clip: 0.0667
+  seed: 42
+  learning_rate: 0.0328
+  hidden_size: 30
+  attention_head_size: 2
+  dropout: 0.2658
+  hidden_continuous_size: 14
+  output_size: 7
+  physics_coeff: 0.1
+  early_stop_patience: 50
+
+search:
+  i_start: 1
+  i_end: 49
+  encoder_base: 52
+  pred_base: 10
+  min_encoder_length: 1
 
